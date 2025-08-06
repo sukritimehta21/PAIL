@@ -1,0 +1,14 @@
+section .data
+msg db 9, 'Hello world', 10
+msglen: equ S-msg
+section . text
+global _start
+_start:
+mov eax, 4
+mov ebx, 1
+mov ecx, msg
+mov edx,msglen
+int 80h
+mov eax, 1
+mov ebx, o
+int 80h
